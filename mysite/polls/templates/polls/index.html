@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Arash Rasti</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>    
+              
+        {% if question_list %}
+        <ul>
+            {% for q in question_list %}
+            <li><a href="{% url 'detail' q.id %}">{{q.question_text}} - {{q.id}}</a></li>            
+            {% endfor %}
+        {% else %}
+            <p>No question exist!</p>
+        {% endif %}
+        </ul>
+    </body>
+</html>
